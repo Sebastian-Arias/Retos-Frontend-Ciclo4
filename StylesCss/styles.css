@@ -20,12 +20,12 @@
 .form-register{
     width: 450px;
     margin: auto;
-    background:	#1d2f3f;
+    background:	#1d3850;
     padding: 10px 20px;
     box-sizing: border-box;
     margin-top: 5px;
     border-radius: 5px;
-    box-shadow: 5px 1px 27px 5px #365875;
+    box-shadow: 5px 1px 27px 5px #5c96c9;
     /*width: 550px;
     background:	#1d2f3f;
     padding: 30px;
@@ -41,6 +41,13 @@
 .Titulo{
     font-size: 20px;
     text-align: center;
+    color: white;
+    padding: 5px;
+}
+
+.Labels{
+    font-size: 15px;
+    text-align: left;
     color: white;
     padding: 5px;
 }
@@ -61,7 +68,7 @@
     padding: 7px;
     box-sizing: border-box;
     font-size: 15px;
-    background-color: #365875;
+    background-color: #1d3850;
     border-radius: 5px;
     border: none;
     color: white;
@@ -70,7 +77,7 @@
 
 .controls{
     width: 100%;
-    background: #203242;
+    background: #1a3247;
     padding: 7px;
     border-radius: 1px;
     margin-bottom: 15px;

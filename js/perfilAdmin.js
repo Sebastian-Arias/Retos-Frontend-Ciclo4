@@ -1,19 +1,20 @@
-var myIndex;
-$(document).ready(function() {
+var myIndex=0;
+$(document).ready(function () {
     console.log("Estas en la página de perfil Administrador");
     init();
 });
 
 function init() {
-    var d_user = JSON.parse(sessionStorage.getItem('miUser'));
+    var d_user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(d_user);
     $(".miNombreUsuario").html(d_user.name);
     traerInformacion();
 }
 
 function traerInformacion() {
     $.ajax({
-            method: "GET",
-            url: "http://localhost:8080/api/user/all"
+            method:"GET",
+            url: "http://168.138.128.169:8080/api/user/all"
         })
         .done(
             function(respuesta) {
@@ -82,7 +83,7 @@ function agregarUsuario(_id) {
 
 
     $.ajax({
-        url: "http://localhost:8080/api/user/" + email + "/" + password,
+        url: "http://168.138.128.169:8080/api/user/" + email + "/" + password,
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -95,7 +96,7 @@ function agregarUsuario(_id) {
                 $.ajax({
                     type: "POST",
                     contentType: "application/json",
-                    url: "http://localhost:8080/api/user/new",
+                    url: "http://168.138.128.169:8080/api/user/new",
                     data: dataToSend,
                     datatype: "json",
                     cache: false,
@@ -110,10 +111,6 @@ function agregarUsuario(_id) {
                         alert("No FUNCIONA");
                     }
                 });
-
-
-
-
             } else {
                 alert("El usuario ya existe, no has sido agregado")
 
@@ -126,7 +123,7 @@ function agregarUsuario(_id) {
 
 function getUserData(email, password) {
     $.ajax({
-        url: "http://localhost:8080/api/user/" + email + "/" + password,
+        url: "http://168.138.128.169:8080/api/user/" + email + "/" + password,
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -184,7 +181,7 @@ function editUser() {
     $.ajax({
         type: "PUT",
         contentType: "application/json",
-        url: "http://localhost:8080/api/user/update",
+        url: "http://168.138.128.169:8080/api/user/update",
         data: dataToSend,
         datatype: "json",
         cache: false,
@@ -208,7 +205,7 @@ function borrarUsuario(_miIndex) {
     };
     let dataToSend = JSON.stringify(myData);
     $.ajax({
-        url: "http://localhost:8080/api/user/" + _miIndex,
+        url: "http://168.138.128.169:8080/api/user/" + _miIndex,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/JSON",
@@ -252,7 +249,7 @@ $(document).on("click", ".btn_borrar", function() {
     console.log(" voy a traer el password " + password);
 
     $.ajax({
-        url: "http://localhost:8080/api/user/" + email + "/" + password,
+        url: "http://168.138.128.169:8080/api/user/" + email + "/" + password,
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {

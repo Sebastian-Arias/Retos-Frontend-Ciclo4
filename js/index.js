@@ -15,7 +15,7 @@ function login() {
     if (usuarioLogin != "" && usuarioPassword != "") {
 
         $.ajax({
-            url: "http://localhost:8080/api/user/" + usuarioLogin + "/" + usuarioPassword,
+            url: "http://168.138.128.169:8080/api/user/" + usuarioLogin + "/" + usuarioPassword,
             type: "GET",
             datatype: "JSON",
             success: function(respuesta) {
@@ -41,10 +41,12 @@ function validarperfil(perfil) {
             window.location.href = "perfilAdmin.html";
             break;
         case 'COORD':
-            console.log('Perfil Coordinador');
+            console.log('Perfil Coordinador'); //Acordarse cambiar dependiendo de los archivos
+            window.location.href = "RegistroProductos.html";
             break;
         case 'ASE':
             console.log('Perfil Asesor');
+            window.location.href = "RegistroProductos.html";
             break;
     }
 

@@ -14,19 +14,24 @@
 </head>
 <body class="fondo">
 
-    
     <form action="" id="frmSignUp">
         <section class="form-register">
             <h2 class="Titulo">Crear Cuenta</h2>
             <br>
             
-            <input class="controls" type="text"      name="identification"  id="identification" placeholder="Escribe tu Identification" onchange="validateIdentificacion_()" >
-            <input class="controls" type="text"      name="name"            id="name"           placeholder="Escribe tu nombre"         onchange="validateName_()" >
-            <input class="controls" type="text"      name="address"         id="address"        placeholder="Escribe tu Direccion"      onchange="validateAddress_()">
-            <input class="controls" type="text"      name="cellPhone"       id="cellphone"      placeholder="Telefono Celular"          onchange="validateCellPhone_()">
-            <input class="controls" type="email"     name="email"           id="email"          placeholder="Escribe tu email"          onchange="ValidateEmail_()">                  
-            <input class="controls" type="password"  name="password"        id="password"       placeholder="Escribe tu contraseña"     onchange="validatePassword_()">
-            <input class="controls" type="password"  name="passConfir"      id="passConfir"     placeholder="Confirma la contraseña"    onchange="verificarPasswords()" onchange="validatePassword_()">
+            <input class="controls" type="text"      name="identification"  id="identification" placeholder="Escribe tu Identification"       onchange="validateIdentificacion_()" >
+            <input class="controls" type="text"      name="name"            id="name"           placeholder="Escribe tu nombre"               onchange="validateName_()" >
+            
+            <h2 class="Labels"   for="birthtDay">Birthday:</h2>
+            <input class="controls" type="date"      name="birthtDay"       id="birthtDay"      placeholder=""                                onchange=""> 
+            <h2 class="Labels"   for="monthBirthtDay">MonthBirthtDay:</h2>
+            <input class="controls" type="text"      name="monthBirthtDay"  id="monthBirthtDay" placeholder="Escribe el mes de tu cumpleaños" onchange="validateBirthtDay_()"> 
+            
+            <input class="controls" type="text"      name="address"         id="address"        placeholder="Escribe tu Direccion"            onchange="validateAddress_()">
+            <input class="controls" type="text"      name="cellPhone"       id="cellphone"      placeholder="Telefono Celular"                onchange="validateCellPhone_()">
+            <input class="controls" type="email"     name="email"           id="email"          placeholder="Escribe tu email"                onchange="ValidateEmail_()">                  
+            <input class="controls" type="password"  name="password"        id="password"       placeholder="Escribe tu contraseña"           onchange="validatePassword_()">
+            <input class="controls" type="password"  name="passConfir"      id="passConfir"     placeholder="Confirma la contraseña"          onchange="verificarPasswords()"  onchange="validatePassword_()">
             
             <div id="msg"></div>
             <!-- Mensajes de Verificación -->

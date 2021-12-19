@@ -1,11 +1,11 @@
-var myIndex;
+const myIndex=0;
 $(document).ready(function() {
     console.log("Estas en la página de perfil Administrador Productos");
     init();
 });
 
 function init() {
-    var d_user = JSON.parse(sessionStorage.getItem('miUser'));
+    var d_user = JSON.parse(sessionStorage.getItem('user'));
     $(".miNombreUsuario").html(d_user.name);
     traerInformacion();
 
@@ -19,10 +19,9 @@ function init() {
 }
 
 function traerInformacion() {
-
     $.ajax({
             method: "GET",
-            url: "http://localhost:8080/api/laptop/all"
+            url: "http://168.138.128.169:8080/api/laptop/all"
         })
         .done(
             function(respuesta) {
@@ -98,7 +97,7 @@ function agregarProductos() {
     $.ajax({
         type: "POST",
         contentType: "application/json",
-        url: "http://localhost:8080/api/laptop/new",
+        url: "http://168.138.128.169:8080/api/laptop/new",
         data: dataToSend,
         datatype: "json",
         cache: false,
@@ -118,7 +117,7 @@ function agregarProductos() {
 
 function getProductData(id) {
     $.ajax({
-        url: "http://localhost:8080/api/laptop/all",
+        url: "http://168.138.128.169:8080/api/laptop/all",
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -180,7 +179,7 @@ function editProduct() {
     $.ajax({
         type: "PUT",
         contentType: "application/json",
-        url: "http://localhost:8080/api/laptop/update",
+        url: "http://168.138.128.169:8080/api/laptop/update",
         data: dataToSend,
         datatype: "json",
         cache: false,
@@ -205,7 +204,7 @@ function borrarProducto(_miIndex) {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/laptop/all",
+        url: "http://168.138.128.169:8080/api/laptop/all",
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -213,7 +212,7 @@ function borrarProducto(_miIndex) {
             var id = respuesta[_miIndex].id;
 
             $.ajax({
-                url: "http://localhost:8080/api/laptop/"+id,
+                url: "http://168.138.128.169:8080/api/laptop/"+id,
                 type: "DELETE",
                 data: dataToSend,
                 contentType: "application/JSON",

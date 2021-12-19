@@ -6,6 +6,10 @@ $frmRegister.addEventListener('submit', ($event) => {
   const $id = document.querySelector("#id");
   const $identification = document.querySelector("#identification");
   const $name = document.querySelector("#name")
+  
+  const $birthtDay = document.querySelector("#birthtDay");
+  const $monthBirthtDay = document.querySelector("#monthBirthtDay");
+
   const $address = document.querySelector("#address");
   const $cellphone = document.querySelector("#cellphone");
   const $password = document.querySelector("#password");
@@ -18,7 +22,7 @@ $frmRegister.addEventListener('submit', ($event) => {
   const $diffPass = document.querySelector("#diffPass")
 
   if ($password.value.trim() == $password2.value.trim()) {
-    getUserByEmail($id, $identification, $name, $address, $cellphone, $password, $zone, $type, $email, $emailExis)
+    getUserByEmail($id, $identification, $name, $birthtDay, $monthBirthtDay, $address, $cellphone, $password, $zone, $type, $email, $emailExis)
     $diffPass.classList.add("d-none")
     $diffPass.classList.remove("d-flex")
   }
@@ -28,11 +32,11 @@ $frmRegister.addEventListener('submit', ($event) => {
   }
 });
 
-async function getUserByEmail(id, identification, name, address, cellphone, password, zone, type, email, emailExis) {
+async function getUserByEmail(id, identification, name, birthtDay, monthBirthtDay, address, cellphone, password, zone, type, email, emailExis) {
     // debugger
     try {
       $emailValue = email.value.trim()
-      const url = 'http://localhost:8080/api/user/emailexist/' + $emailValue
+      const url = 'http://168.138.128.169:8080/api/user/emailexist/' + $emailValue
       const response = await fetch(url)
       const responseJson = await response.json();
       console.log(responseJson)
@@ -41,18 +45,20 @@ async function getUserByEmail(id, identification, name, address, cellphone, pass
         emailExis.classList.add("d-flex")
   
       } else {
-        sendDataToBackend(id, identification, name, address, cellphone, password, zone, type, email)
+        sendDataToBackend(id, identification, name, birthtDay, monthBirthtDay, address, cellphone, password, zone, type, email)
       }
     } catch (error) {
   
     }
 }
 
-async function sendDataToBackend(id, identification, name, address, cellphone, password,  zone, type, email) {
+async function sendDataToBackend(id, identification, name, birthtDay, monthBirthtDay, address, cellphone, password,  zone, type, email) {
     try {
       // $idValue = id.value.trim()
       $identificationValue = identification.value.trim()
       $nameValue = name.value.trim()
+      $birthtDay = birthtDay.value.trim()
+      $monthBirthtDay = monthBirthtDay.value.trim()
       $addressValue = address.value.trim()
       $cellphoneValue = cellphone.value.trim()
       $passwordValue = password.value.trim()
@@ -63,14 +69,16 @@ async function sendDataToBackend(id, identification, name, address, cellphone, p
       if (!validateLogin()) {
         alert("Revisa los campos")
       } else {
-        if ($identificationValue != null && $nameValue != null && $addressValue != null && $cellphoneValue != null && $passwordValue != null && $emailValue != null && $zoneValue != null && $typeValue != null) {
+        if ($identificationValue != null && $nameValue != null && $birthtDay != null && $monthBirthtDay != null && $addressValue != null && $cellphoneValue != null && $passwordValue != null && $emailValue != null && $zoneValue != null && $typeValue != null) {
   
-          const url = "http://localhost:8080/api/user/new";
+          const url = "http://168.138.128.169:8080/api/user/new";
           const fetchOptions = {
             method: "POST",
             body: JSON.stringify({
               identification: $identificationValue,
               name: $nameValue,
+              birthtDay: $birthtDay,
+              monthBirthtDay: $monthBirthtDay,
               address: $addressValue,
               cellPhone: $cellphoneValue,
               password: $passwordValue,
@@ -87,7 +95,7 @@ async function sendDataToBackend(id, identification, name, address, cellphone, p
           console.log(`responseConverted`, responseConverted);
   
           window.location.href = "index.html";   //mirar porque podriamos hacer un try catc
-          alert("creado")
+          alert("Bienvenido")
         }
       }
     } catch (error) {

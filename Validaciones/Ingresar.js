@@ -72,7 +72,7 @@ $(document).ready(function () {
     let inputPassword = $("#pwd").val();
 
     $.ajax({
-        url: `http://localhost:8080/api/user/${inputEmail}/${inputPassword}`,
+        url: `http://168.138.128.169:8080/api/user/${inputEmail}/${inputPassword}`,
         type: 'GET',
         dataType: 'json',
 

@@ -1,5 +1,5 @@
 
-const expresiones = {                    //Expresiones regulares
+const expresiones = {                    //Expresiones regulares Para algunas validaciones
 	//identificacion: 
     usuario: /^[a-zA-Z0-9\_\-]{4,20}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -36,6 +36,37 @@ function validateName_(){
     else {
         console.log(inputText)
         alert("Atención: nombre inválido, el campo debe tener más de 1 caracter y menos de 80 caracteres");
+        //document.getElementById("useremail").focus()        
+        return false;
+    }
+}
+
+function validateBirthtDay_(){
+    inputText = document.getElementById("monthBirthtDay").value
+    console.log("inputText", inputText)
+    var numeroMonthB = parseInt(inputText);
+    if (numeroMonthB <= 12){
+        validarMonthB_();
+    }else{
+        alert("Tiene que ser un numero mayor a 12 intente de nuevo");
+        return false;
+    }
+}
+
+function validarMonthB_(){
+    var monthBirthtDayFormat = /^\d{0,2}$/;
+    if (inputText.match(monthBirthtDayFormat)) {
+        // alert("Ok: valid monthBirthtDay ");
+        //document.querySelector("useremail").focus();   
+        //console.log("AAAAAAAAAA") 
+        console.log(typeof(inputText));  
+        //var numeroMonthB = parseInt(inputText);
+        //console.log(typeof(numeroMonthB));  //El mes de cumpleaños deberia ser numerico :c
+        return true;
+    }
+    else {
+        console.log(inputText)
+        alert("Atención: El mes de cumpleaños debe tener entre 1 o 2 cifras no puede contener letras");
         //document.getElementById("useremail").focus()        
         return false;
     }

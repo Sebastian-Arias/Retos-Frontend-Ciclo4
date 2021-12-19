@@ -1,4 +1,4 @@
-function traerInformacionProductos(){
+/*function traerInformacionProductos(){
     console.log("test");
         $.ajax({
         url:"http://localhost:8080/api/laptop/all",
@@ -36,3 +36,4 @@ function pintarRespuesta(respuesta){
     myTable+="</table>";
     $("#resultado3").html(myTable);
 }
+*/
