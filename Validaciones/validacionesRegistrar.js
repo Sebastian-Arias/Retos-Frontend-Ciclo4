@@ -204,7 +204,7 @@ function verificarPasswords() {
 
 function validateLogin(){
     if(ValidateEmail_() && validateIdentificacion_() && validateName_() && validateAddress_() &&  validateCellPhone_() &&   validatePassword_()){
-        alert("Usuario Creado");
+        alert("Usuario Creado ya puede ingresar al sistema");
         return true;
     }
     return false;

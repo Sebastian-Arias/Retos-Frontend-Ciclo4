@@ -150,11 +150,11 @@ function validarperfil(perfil) {
             break;
         case 'COORD':
             console.log('Perfil Coordinador');
-            window.location.href = "index.html";
+            window.location.href = "RegistroProductos.html";
             break;
         case 'ASE':
             console.log('Perfil Asesor');
-            window.location.href = "index.html";
+            window.location.href = "ordenes.html";
             break;
     }
 }

@@ -94,7 +94,7 @@ async function sendDataToBackend(id, identification, name, birthtDay, monthBirth
           const responseConverted = await response.json();
           console.log(`responseConverted`, responseConverted);
   
-          window.location.href = "index.html";   //mirar porque podriamos hacer un try catc
+          window.location.href = "index.html";   //Una vez registrado el usuario es llevado al index 
           alert("Bienvenido")
         }
       }
