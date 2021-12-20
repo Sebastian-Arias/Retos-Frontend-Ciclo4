@@ -1,0 +1,76 @@
+.fondoindex{
+    background-image: url("/images/FondoR.png");         
+    background-size: 100vw 100vh;
+    background-attachment: fixed;  
+    margin: 0;
+}
+
+.form-register{
+    width: 450px;
+    margin: auto;
+    background:	#1d3850;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: 5px 1px 27px 5px #5c96c9;
+}
+
+.controls{
+    width: 100%;
+    background: #1a3247;
+    padding: 7px;
+    border-radius: 1px;
+    margin-bottom: 15px;
+    font-family: Cambria;
+    font-size: 20px;
+    color: white;
+}
+
+.botons{
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: #265885;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: Cambria;
+}
+
+.Ocho_Bits{
+    color: rgb(29, 78, 95);
+    padding: 15px;
+    margin-bottom: 15px;
+    font-family: 'Forte';
+    font-size: 50px;
+}
+
+.caja{
+    box-shadow: 5px 1px 27px 5px #72bcfd;
+}
+
+.Titulo{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+}
+
+.links{
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: Cambria;
+    line-height: 20px;
+}
+
+.Perfiles{
+    color: rgb(175, 218, 207);
+    font-family: 'Comic Sans MS';
+    font-size: 25px;
+}

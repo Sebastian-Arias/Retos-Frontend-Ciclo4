@@ -1,4 +1,4 @@
-var myIndex=0;
+var myIndex;
 $(document).ready(function () {
     console.log("Estas en la página de perfil Administrador");
     init();
@@ -52,8 +52,8 @@ function traerInformacion() {
 
 }
 
-function agregarUsuario(_id) {
-    var id = _id;
+function agregarUsuario() {
+    var id = $.trim($("#id").val());
     var identification = $.trim($("#identification").val());
     var name = $.trim($("#name").val());
     var birthtDay = $.trim($("#birthtDay").val());
@@ -66,7 +66,7 @@ function agregarUsuario(_id) {
     var type = $.trim($("#type").val());
 
     let myData = {
-        id: id,
+        id:id,
         identification: identification,
         name: name,
         birthtDay: birthtDay,
@@ -79,6 +79,7 @@ function agregarUsuario(_id) {
         type: type
 
     }
+    console.log(myData);
     let dataToSend = JSON.stringify(myData);
 
 
@@ -113,12 +114,9 @@ function agregarUsuario(_id) {
                 });
             } else {
                 alert("El usuario ya existe, no has sido agregado")
-
             }
         }
     });
-
-
 }
 
 function getUserData(email, password) {
