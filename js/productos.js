@@ -131,7 +131,7 @@ function getProductData(id) {
             $("#description_e").val(respuesta[id].description);
             $("#memory_e").val(respuesta[id].memory);
             $("#hardDrive_e").val(respuesta[id].hardDrive);
-            $("#availabillity_e").val(respuesta[id].availability);
+            $("#availability").val(respuesta[id].availability);
             $("#price_e").val(respuesta[id].price);
             $("#quantity_e").val(respuesta[id].quantity);  
             $("#photography_e").val(respuesta[id].photography);            
@@ -153,7 +153,7 @@ function editProduct() {
     var memory = $.trim($("#memory_e").val());
     var hardDrive = $.trim($("#hardDrive_e").val());
     var price = $.trim($("#price_e").val());
-    var availability = $.trim($("#availabillity_e").val());
+    var availability = $.trim($("#availability_e").val());
     var quantity = $.trim($("#quantity_e").val());
     var photography = $.trim($("#photography_e").val());
 
